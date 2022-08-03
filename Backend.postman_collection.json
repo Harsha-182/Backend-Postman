@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "a30fa458-6d41-4d70-bdec-e91348579304",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21965635"
+	},
+	"item": [
+		{
+			"name": "BackendInit",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "Ram@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Ram",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1208",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTYsImlhdCI6MTY1OTM3MzgyOSwiZXhwIjoxNjU5Mzc1MDI5LCJpc3MiOiJCYWNrZW5kMSJ9.GD3tpxPPwLpl72Jbv6DANiYDfg7fgKLn642mxjAl1QE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "Ravi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "0987654321",
+									"type": "text"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "1234567890",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Ravi",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "112",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "David@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5004/api/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5004",
+							"path": [
+								"api",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njc4LCJpYXQiOjE2NTk0NTczNDQsImV4cCI6MTY1OTQ1ODU0NCwiaXNzIjoiQmFja2VuZDEifQ.0BOCbYYmcgzDXDhKtuS-5VdoMujdfhXj1cqUFJna18M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {    \n      \"email\":\"wtc@gmail.com\",\n      \"password\":\"1234567890\",\n      \"name\":\"Orion\"\n      \n    \n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/allUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"allUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "David@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "0987654321",
+									"type": "text"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "0987654321",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5004/api/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5004",
+							"path": [
+								"api",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
